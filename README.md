@@ -2,9 +2,10 @@ This project was developed with @roeib - see original repo: https://github.com/r
 
 Server:
 =======
-Written in golang 
+Written in Clojure 
 start server : 
-### go run main.go 
+1. clone/download the server from this repo : 
+2. lein run
 
 
 
