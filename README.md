@@ -2,10 +2,15 @@ This project was developed with @roeib - see original repo: https://github.com/r
 
 Server:
 =======
-Written in Clojure 
+Written in Clojure, used Websockets for communication with client
+
 start server : 
+--------------
 1. clone/download the server from this repo : 
-2. lein run
+```https://github.com/ladymeyy/exceptional-monkeys-game-clojure-server.git ```
+
+2. In project directory, run: 
+```lein run```
 
 
 
