@@ -16,6 +16,9 @@ start server :
 
 Client: 
 ========
+## Requirements:
+Make sure you have node, yarn, npm (version > 6.1.0) 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
