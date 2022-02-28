@@ -16,7 +16,6 @@ function App() {
   const showKeyCode = useCallback(({ key }) => {
     sendMSG(playerMoves[key])
   }, [sendMSG]);
-  
   useEventListener('keydown', showKeyCode);
   return (
     <>      

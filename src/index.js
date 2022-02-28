@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+window.React = React;
+window.ReactDOM = ReactDOM;
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+window.App = App;
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import { useWebSocket } from './hooks/useWebSocket';
+import { useBodyBounderies } from './hooks/useBodyBounderies'
+import { ws, playerMoves } from './Utils.js/Utils'
+import { useEventListener } from './hooks/useEventListener'
+import Monkeys from './components/Monkeys'
+import Score from './components/score/Score'
+import Dialog from './components/dialog/Dialog'
+import Exceptions from './components/exceptions/Exceptions'
+
+window.useWebSocket = useWebSocket;
+window.useBodyBounderies = useBodyBounderies;
+window.ws = ws;
+window.playerMoves = playerMoves;
+window.useEventListener = useEventListener;
+window.Monkeys = Monkeys;
+window.Score = Score;
+window.Dialog = Dialog;
+window.Exceptions = Exceptions;

@@ -1,6 +1,6 @@
 import React from 'react';
-import monkey from '../assets/monkey.png'
-import activemonkey from '../assets/activemonkey.png'
+import monkey from '../assets/monkey.png';
+import activemonkey from '../assets/activemonkey.png';
 const Monkey = ({ shake,x,y,color,exceptionType,active,score }) => {
     return (
         <>

@@ -1,0 +1,7 @@
+^{:css-dirs          ["resources/public/css"],
+  :npm               {:bundles {"dist/index.bundle.js" "src/index.js"}},
+  :watch-dirs        ["src-cljs"]}
+{:closure-defines      {DEBUG true},
+ :main                 monkeys.core
+ :output-to            "resources/public/js/compiled/app.js"
+ :open-url false}
