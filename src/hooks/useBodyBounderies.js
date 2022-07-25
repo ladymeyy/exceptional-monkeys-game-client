@@ -1,6 +1,6 @@
 import {useRef, useLayoutEffect } from 'react';
 const MONKEYWIDTH = 100;
-const MONKEYHEIGHT = 129;
+const MONKEYHEIGHT = 130;
 
 export const useBodyBounderies = () => {
     const bodyBoundries = useRef(null);

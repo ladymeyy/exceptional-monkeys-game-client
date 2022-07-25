@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import './App.css';
 import { useWebSocket } from './hooks/useWebSocket'
 import { useBodyBounderies } from './hooks/useBodyBounderies'
-import { ws, playerMoves } from './Utils.js/Utils'
+import { ws, keyToPlayerStep } from './Utils.js/Utils'
 import { useEventListener } from './hooks/useEventListener'
 import Monkeys from './components/Monkeys'
 import Score from './components/score/Score'
@@ -14,7 +14,7 @@ function App() {
   const bodyBounderies = useBodyBounderies()
   const [playState, sendMSG,webSocket] = useWebSocket(ws, bodyBounderies)
   const showKeyCode = useCallback(({ key }) => {
-    sendMSG(playerMoves[key])
+    sendMSG(keyToPlayerStep[key])
   }, [sendMSG]);
   
   useEventListener('keydown', showKeyCode);

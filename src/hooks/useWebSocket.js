@@ -7,6 +7,8 @@ const initialState = {
 
 const gameReducer = (state, action) => {
   var entity = action.by
+  entity.x = entity.x*action.boundaries.width
+  entity.y = entity.y*action.boundaries.height
 
  if(entity["self?"]){
 
@@ -86,7 +88,7 @@ export const useWebSocket = (url, bounderies) => {
     webSocket.current.onmessage = (event) => {
       const parseData = JSON.parse(event.data);
      // const [wsInfo] = Object.getOwnPropertyNames(parseData)
-      dispatch({  by: parseData });
+      dispatch({  by: parseData, boundaries: bounderies.current });
     };
 
   }, [url]);
