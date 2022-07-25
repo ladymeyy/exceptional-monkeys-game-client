@@ -34,10 +34,10 @@ const gameReducer = (state, action) => {
          players: clonePlayers
        }
      }
-     //check if player hit bounderies and add animation
+     //check if player hit boundaries and add animation
      entity.collision ? clonePlayers[objIndex].shake = true : clonePlayers[objIndex].shake = false
 
-     //change player cordinates on screen
+     //change player coordinates on screen
      clonePlayers[objIndex].x = entity.x;
      clonePlayers[objIndex].y = entity.y;
      clonePlayers[objIndex].score = entity.score;
@@ -79,7 +79,7 @@ const gameReducer = (state, action) => {
 
 };
 
-export const useWebSocket = (url, bounderies) => {
+export const useWebSocket = (url, boundaries) => {
   const [messages, dispatch] = useReducer(gameReducer, initialState);
   const webSocket = useRef(null);
 
@@ -88,7 +88,7 @@ export const useWebSocket = (url, bounderies) => {
     webSocket.current.onmessage = (event) => {
       const parseData = JSON.parse(event.data);
      // const [wsInfo] = Object.getOwnPropertyNames(parseData)
-      dispatch({  by: parseData, boundaries: bounderies.current });
+      dispatch({  by: parseData, boundaries: boundaries.current });
     };
 
   }, [url]);
@@ -96,14 +96,14 @@ export const useWebSocket = (url, bounderies) => {
 
   useEffect(() => {
     webSocket.current.onopen = () => {
-      webSocket.current.send(JSON.stringify(bounderies.current))
+      webSocket.current.send(JSON.stringify(boundaries.current))
     }
     return () => {
       webSocket.current.onclose = (e) => {
         console.log('e',e)
       }
     };
-  }, [bounderies]);
+  }, [boundaries]);
 
   const sendMessage = useCallback(message => {
     if (!message) return

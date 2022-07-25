@@ -2,7 +2,7 @@
 import React, { useCallback } from 'react';
 import './App.css';
 import { useWebSocket } from './hooks/useWebSocket'
-import { useBodyBounderies } from './hooks/useBodyBounderies'
+import { useBodyBoundaries } from './hooks/useBodyBoundaries'
 import { ws, keyToPlayerStep } from './Utils.js/Utils'
 import { useEventListener } from './hooks/useEventListener'
 import Monkeys from './components/Monkeys'
@@ -11,8 +11,8 @@ import Dialog from './components/dialog/Dialog'
 import Exceptions from './components/exceptions/Exceptions'
 
 function App() {
-  const bodyBounderies = useBodyBounderies()
-  const [playState, sendMSG,webSocket] = useWebSocket(ws, bodyBounderies)
+  const bodyBoundaries = useBodyBoundaries()
+  const [playState, sendMSG,webSocket] = useWebSocket(ws, bodyBoundaries)
   const showKeyCode = useCallback(({ key }) => {
     sendMSG(keyToPlayerStep[key])
   }, [sendMSG]);
